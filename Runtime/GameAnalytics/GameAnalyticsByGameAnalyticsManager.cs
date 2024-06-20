@@ -8,8 +8,34 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
     /// </summary>
     internal class GameAnalyticsByGameAnalyticsManager : BaseGameAnalyticsManager
     {
+        private readonly Dictionary<string, object> m_publicProperties = new Dictionary<string, object>();
+
         public override void Init(string appid, string channel, string appKey, string secretKey)
         {
+            GameAnalyticsSDK.GameAnalytics.EnableFpsHistogram(true);
+            GameAnalyticsSDK.GameAnalytics.EnableMemoryHistogram(true);
+            GameAnalyticsSDK.GameAnalytics.EnableAdvertisingIdTracking(true);
+            GameAnalyticsSDK.GameAnalytics.EnableSDKInitEvent(true);
+            GameAnalyticsSDK.GameAnalytics.SetEnabledManualSessionHandling(true);
+            GameAnalyticsSDK.GameAnalytics.EnableHealthHardwareInfo(true);
+            GameAnalyticsSDK.GameAnalytics.SetEnabledEventSubmission(true);
+        }
+
+        public override void SetPublicProperties(string key, object value)
+        {
+            m_publicProperties[key] = value;
+            GameAnalyticsSDK.GameAnalytics.SetGlobalCustomEventFields(m_publicProperties);
+        }
+
+        public override void ClearPublicProperties()
+        {
+            m_publicProperties.Clear();
+            GameAnalyticsSDK.GameAnalytics.SetGlobalCustomEventFields(m_publicProperties);
+        }
+
+        public override Dictionary<string, object> GetPublicProperties()
+        {
+            return m_publicProperties;
         }
 
         public override void StartTimer(string eventName)
