@@ -1,0 +1,17 @@
+{
+    "name": "GameFrameX.GameAnalytics.GameAnalytics.Runtime",
+    "references": [
+        "GameFrameX.GameAnalytics.Runtime",
+        "GameFrameX.Runtime",
+        "GameAnalyticsSDK"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
