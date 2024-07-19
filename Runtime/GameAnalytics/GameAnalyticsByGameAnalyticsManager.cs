@@ -10,7 +10,7 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
     {
         private readonly Dictionary<string, object> m_publicProperties = new Dictionary<string, object>();
 
-        public override void Init(string appid, string channel, string appKey, string secretKey)
+        public override void Init(string appid, string channelId, string channel, string appKey, string secretKey)
         {
             GameAnalyticsSDK.GameAnalytics.EnableFpsHistogram(true);
             GameAnalyticsSDK.GameAnalytics.EnableMemoryHistogram(true);
@@ -19,6 +19,7 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
             GameAnalyticsSDK.GameAnalytics.SetEnabledManualSessionHandling(true);
             GameAnalyticsSDK.GameAnalytics.EnableHealthHardwareInfo(true);
             GameAnalyticsSDK.GameAnalytics.SetEnabledEventSubmission(true);
+            GameAnalyticsSDK.GameAnalytics.SetExternalUserId(channelId);
         }
 
         public override void SetPublicProperties(string key, object value)
