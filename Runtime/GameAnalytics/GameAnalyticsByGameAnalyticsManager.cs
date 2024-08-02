@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using GameFrameX.GameAnalytics.Runtime;
+using GameFrameX.Runtime;
+using UnityEngine;
 
 namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
 {
@@ -10,8 +12,24 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
     {
         private readonly Dictionary<string, object> m_publicProperties = new Dictionary<string, object>();
 
-        public override void Init(string appid, string channelId, string channel, string appKey, string secretKey)
+        private GameAnalyticsGameAnalyticsSetting m_GameAnalyticsSetting;
+
+        public override void Init(Dictionary<string, string> args)
         {
+            if (m_IsInit)
+            {
+                return;
+            }
+
+            Log.Info("GameAnalyticsByGameAnalyticsManager Init, args:" + Utility.Json.ToJson(args));
+            m_GameAnalyticsSetting = Utility.Json.ToObject<GameAnalyticsGameAnalyticsSetting>(Utility.Json.ToJson(args));
+
+            if (m_GameAnalyticsSetting == null)
+            {
+                Log.Error("GameAnalyticsByGameAnalyticsManager Init: GameAnalyticsGameAnalyticsSetting is null");
+                return;
+            }
+
             GameAnalyticsSDK.GameAnalytics.EnableFpsHistogram(true);
             GameAnalyticsSDK.GameAnalytics.EnableMemoryHistogram(true);
             GameAnalyticsSDK.GameAnalytics.EnableAdvertisingIdTracking(true);
@@ -19,7 +37,23 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
             GameAnalyticsSDK.GameAnalytics.SetEnabledManualSessionHandling(true);
             GameAnalyticsSDK.GameAnalytics.EnableHealthHardwareInfo(true);
             GameAnalyticsSDK.GameAnalytics.SetEnabledEventSubmission(true);
-            GameAnalyticsSDK.GameAnalytics.SetExternalUserId(channelId);
+            GameAnalyticsSDK.GameAnalytics.SetExternalUserId(m_GameAnalyticsSetting.channelId);
+            m_IsInit = true;
+        }
+
+        public override void ManualInit(Dictionary<string, string> args)
+        {
+            if (m_IsInit)
+            {
+                return;
+            }
+
+            Init(args);
+        }
+
+        public override bool IsManualInit()
+        {
+            return true;
         }
 
         public override void SetPublicProperties(string key, object value)
