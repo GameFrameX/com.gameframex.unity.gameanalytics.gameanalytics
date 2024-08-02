@@ -10,15 +10,15 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
     /// </summary>
     internal class GameAnalyticsByGameAnalyticsManager : BaseGameAnalyticsManager
     {
-        private readonly Dictionary<string, object> m_publicProperties = new Dictionary<string, object>();
-
-        private GameAnalyticsGameAnalyticsSetting m_GameAnalyticsSetting;
+        private readonly Dictionary<string, object>        m_publicProperties = new Dictionary<string, object>();
+        private readonly Dictionary<string, string>        Args               = new Dictionary<string, string>();
+        private          GameAnalyticsGameAnalyticsSetting m_GameAnalyticsSetting;
 
         public override void Init(Dictionary<string, string> args)
         {
-            if (m_IsInit)
+            foreach (var arg in args)
             {
-                return;
+                Args[arg.Key] = arg.Value;
             }
 
             Log.Info("GameAnalyticsByGameAnalyticsManager Init, args:" + Utility.Json.ToJson(args));
@@ -38,16 +38,10 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
             GameAnalyticsSDK.GameAnalytics.EnableHealthHardwareInfo(true);
             GameAnalyticsSDK.GameAnalytics.SetEnabledEventSubmission(true);
             GameAnalyticsSDK.GameAnalytics.SetExternalUserId(m_GameAnalyticsSetting.channelId);
-            m_IsInit = true;
         }
 
         public override void ManualInit(Dictionary<string, string> args)
         {
-            if (m_IsInit)
-            {
-                return;
-            }
-
             Init(args);
         }
 
