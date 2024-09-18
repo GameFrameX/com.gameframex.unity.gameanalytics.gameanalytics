@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnityEngine.Scripting;
 
 namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
 {
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     internal class GameFrameXGameAnalyticsGameAnalyticsCroppingHelper : MonoBehaviour
     {
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         private void Start()
         {
             _ = typeof(GameAnalyticsByGameAnalyticsManager);
