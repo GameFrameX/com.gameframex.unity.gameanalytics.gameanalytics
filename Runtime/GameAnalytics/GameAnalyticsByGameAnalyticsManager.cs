@@ -39,6 +39,7 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
             GameAnalyticsSDK.GameAnalytics.EnableHealthHardwareInfo(true);
             GameAnalyticsSDK.GameAnalytics.SetEnabledEventSubmission(true);
             GameAnalyticsSDK.GameAnalytics.SetExternalUserId(m_GameAnalyticsSetting.channelId);
+            GameAnalyticsHelper.Init();
         }
 
         [UnityEngine.Scripting.Preserve]
