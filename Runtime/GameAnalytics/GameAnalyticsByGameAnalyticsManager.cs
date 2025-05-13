@@ -121,5 +121,11 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
         {
             GameAnalyticsSDK.GameAnalytics.NewDesignEvent(eventName, eventValue, customF);
         }
+
+        [UnityEngine.Scripting.Preserve]
+        public override void SetPlayerId(string playerId)
+        {
+            GameAnalyticsSDK.GameAnalytics.SetExternalUserId(playerId);
+        }
     }
 }
