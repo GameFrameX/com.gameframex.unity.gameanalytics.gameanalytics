@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gameframex/com.gameframex.unity.gameanalytics.gameanalytics/compare/1.0.5...1.1.0) (2025-12-24)
+
+
+### Features
+
+* **ci:** change ci ([6ca698a](https://github.com/gameframex/com.gameframex.unity.gameanalytics.gameanalytics/commit/6ca698a9ff95fbf0af3bf152322e2e370b27a23e))
+
 # Changelog
 
 ## [1.0.5](https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.gameanalytics/tree/1.0.5) (2025-06-01)
