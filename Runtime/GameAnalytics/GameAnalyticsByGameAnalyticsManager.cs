@@ -31,14 +31,20 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
                 return;
             }
 
-            GameAnalyticsSDK.GameAnalytics.EnableFpsHistogram(true);
-            GameAnalyticsSDK.GameAnalytics.EnableMemoryHistogram(true);
-            GameAnalyticsSDK.GameAnalytics.EnableAdvertisingIdTracking(true);
-            GameAnalyticsSDK.GameAnalytics.EnableSDKInitEvent(true);
-            GameAnalyticsSDK.GameAnalytics.SetEnabledManualSessionHandling(true);
-            GameAnalyticsSDK.GameAnalytics.EnableHealthHardwareInfo(true);
-            GameAnalyticsSDK.GameAnalytics.SetEnabledEventSubmission(true);
-            GameAnalyticsSDK.GameAnalytics.SetExternalUserId(m_GameAnalyticsSetting.channelId);
+            var sentryUnityOptions = new Sentry.Unity.SentryUnityOptions
+            {
+                Enabled = true,
+                AttachScreenshot = true,
+                Il2CppLineNumberSupportEnabled = true,
+                AddBreadcrumbsWithStructuredLogs = true,
+                CaptureLogErrorEvents = true,
+                AutoStartupTraces = true,
+                AutoSceneLoadTraces = true,
+                ScreenshotQuality = Sentry.Unity.ScreenshotQuality.Low,
+                ScreenshotCompression = 1,
+            };
+            Sentry.Unity.SentrySdk.Init(sentryUnityOptions);
+
             GameAnalyticsHelper.Init();
         }
 
@@ -58,6 +64,7 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
         public override void SetPublicProperties(string key, object value)
         {
             m_publicProperties[key] = value;
+            Sentry.Unity.SentrySdk.SetTag();
             GameAnalyticsSDK.GameAnalytics.SetGlobalCustomEventFields(m_publicProperties);
         }
 
@@ -77,6 +84,7 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
         [UnityEngine.Scripting.Preserve]
         public override void StartTimer(string eventName)
         {
+            Sentry.Unity.SentrySdk.CaptureEvent(eventName);
             GameAnalyticsSDK.GameAnalytics.StartTimer(eventName);
         }
 

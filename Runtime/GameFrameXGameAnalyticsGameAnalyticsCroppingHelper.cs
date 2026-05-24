@@ -8,6 +8,8 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
         [UnityEngine.Scripting.Preserve]
         private void Start()
         {
+            _ = typeof(GameAnalyticsGameAnalyticsSetting);
+            _ = typeof(GameAnalyticsHelper);
             _ = typeof(GameAnalyticsByGameAnalyticsManager);
         }
     }

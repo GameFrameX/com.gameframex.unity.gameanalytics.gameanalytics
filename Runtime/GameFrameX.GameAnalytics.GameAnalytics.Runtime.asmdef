@@ -1,15 +1,18 @@
 {
     "name": "GameFrameX.GameAnalytics.GameAnalytics.Runtime",
+    "rootNamespace": "",
     "references": [
         "GameFrameX.GameAnalytics.Runtime",
         "GameFrameX.Runtime",
-        "GameAnalyticsSDK"
+        "io.sentry.unity.runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
-    "overrideReferences": false,
-    "precompiledReferences": [],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Sentry.Unity.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

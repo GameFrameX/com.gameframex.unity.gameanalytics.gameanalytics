@@ -21,7 +21,8 @@ namespace GameFrameX.GameAnalytics.GameAnalytics.Runtime
         void Start()
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
-            {
+            { 
+                Sentry.Unity.SentrySdk.
                 GameAnalytics.RequestTrackingAuthorization(this);
             }
             else
