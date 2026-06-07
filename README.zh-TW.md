@@ -32,35 +32,6 @@ GameFrameX GameAnalytics 元件 - 提供遊戲開發者整合和使用遊戲資�
 - **初始化保護** - 所有方法在執行前檢查初始化狀態
 - **自訂欄位** - 支援基於字典的自訂事件資料
 
-## 安裝
-
-### 透過 Git URL 安裝（推薦）
-
-1. 在 Unity 編輯器中開啟 Package Manager
-2. 點擊 "+" 按鈕選擇 "Add package from git URL"
-3. 輸入以下 URL：
-   ```
-   https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.gameanalytics.git
-   ```
-
-### 透過 manifest.json 安裝
-
-在專案的 `Packages/manifest.json` 檔案中新增：
-
-```json
-{
-  "dependencies": {
-    "com.gameframex.unity.gameanalytics.gameanalytics": "https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.gameanalytics.git"
-  }
-}
-```
-
-### 手動安裝
-
-1. 下載最新版本發佈包
-2. 解壓縮到專案的 `Packages` 目錄下
-3. Unity 會自動辨識並載入包
-
 ## 快速開始
 
 ### 安裝
@@ -109,6 +80,21 @@ Then add the package to `dependencies`:
 
 詳見 [CHANGELOG.md](CHANGELOG.md)。
 
+
+## 依賴
+
+| 套件 | 說明 |
+|------|------|
+| (无) | - |
+
+
+## 文檔與資源
+
+- [官方文檔](https://gameframex.doc.alianblank.com)
+
+## 社區與支援
+
+- QQ群: 467608841 / 233840761
 ## 開源協議
 
 詳見 [LICENSE.md](LICENSE.md) 檔案。

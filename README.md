@@ -32,35 +32,6 @@ GameFrameX GameAnalytics Component - Provides game developers with an interface 
 - **Initialization Guard** - All methods check initialization status before executing
 - **Custom Fields** - Support for dictionary-based custom event data
 
-## Installation
-
-### Via Git URL (Recommended)
-
-1. Open Package Manager in Unity Editor
-2. Click the "+" button and select "Add package from git URL"
-3. Enter the following URL:
-   ```
-   https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.gameanalytics.git
-   ```
-
-### Via manifest.json
-
-Add the following to your project's `Packages/manifest.json`:
-
-```json
-{
-  "dependencies": {
-    "com.gameframex.unity.gameanalytics.gameanalytics": "https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.gameanalytics.git"
-  }
-}
-```
-
-### Manual Installation
-
-1. Download the latest release package
-2. Extract it to your project's `Packages` directory
-3. Unity will automatically recognize and load the package
-
 ## Quick Start
 
 ### Installation
@@ -109,6 +80,21 @@ Then add the package to `dependencies`:
 
 See [CHANGELOG.md](CHANGELOG.md) for details.
 
+
+## Dependencies
+
+| Package | Description |
+|---------|-------------|
+| (无) | - |
+
+
+## Documentation & Resources
+
+- [Documentation](https://gameframex.doc.alianblank.com)
+
+## Community & Support
+
+- QQ Group: 467608841 / 233840761
 ## License
 
 See [LICENSE.md](LICENSE.md) for license information.

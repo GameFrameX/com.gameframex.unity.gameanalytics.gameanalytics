@@ -32,35 +32,6 @@ GameFrameX GameAnalytics 컴포넌트 - 게임 개발자에게 게임 분석 기
 - **초기화 가드** - 모든 메서드는 실행 전 초기화 상태를 확인
 - **사용자 정의 필드** - 딕셔너리 기반 사용자 정의 이벤트 데이터 지원
 
-## 설치
-
-### Git URL을 통해 설치 (권장)
-
-1. Unity 에디터에서 Package Manager 열기
-2. "+" 버튼을 클릭하고 "Add package from git URL" 선택
-3. 다음 URL 입력:
-   ```
-   https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.gameanalytics.git
-   ```
-
-### manifest.json을 통해 설치
-
-프로젝트의 `Packages/manifest.json`에 다음을 추가:
-
-```json
-{
-  "dependencies": {
-    "com.gameframex.unity.gameanalytics.gameanalytics": "https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.gameanalytics.git"
-  }
-}
-```
-
-### 수동 설치
-
-1. 최신 릴리스 패키지 다운로드
-2. 프로젝트의 `Packages` 디렉토리에 압축 해제
-3. Unity가 자동으로 패키지를 인식하고 로드합니다
-
 ## 빠른 시작
 
 ### 설치
@@ -109,6 +80,21 @@ Then add the package to `dependencies`:
 
 자세한 내용은 [CHANGELOG.md](CHANGELOG.md)를 참조하세요.
 
+
+## 의존성
+
+| 패키지 | 설명 |
+|--------|------|
+| (无) | - |
+
+
+## 문서 및 자료
+
+- [문서](https://gameframex.doc.alianblank.com)
+
+## 커뮤니티 및 지원
+
+- QQ 그룹: 467608841 / 233840761
 ## 라이선스
 
 자세한 내용은 [LICENSE.md](LICENSE.md) 파일을 참조하세요.
