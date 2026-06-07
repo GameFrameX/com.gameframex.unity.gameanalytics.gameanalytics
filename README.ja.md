@@ -63,54 +63,36 @@ GameFrameX GameAnalytics コンポーネント - ゲーム開発者にゲーム�
 
 ## クイックスタート
 
-### 初期化
+### インストール
 
-Unity の `Awake` メソッドで `GameAnalyticsComponent` を初期化します。`Init()` を呼び出して初期化を完了します：
+Unity プロジェクトの `Packages/manifest.json` を編集し、`scopedRegistries` セクションを追加してください：
 
-```csharp
-using GameFrameX.GameAnalytics.Runtime;
-
-public class GameAnalyticsExample : MonoBehaviour
+```json
 {
-    private void Awake()
+  "scopedRegistries": [
     {
-        // GameAnalyticsComponent を取得して初期化
-        var gameAnalyticsComponent = GameEntry.GetComponent<GameAnalyticsComponent>();
-        gameAnalyticsComponent.Init();
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
     }
+  ]
 }
 ```
 
-### タイマー機能
+`scopes` は、どのパッケージをこのレジストリから解決するかを制御します。`com.gameframex` で始まるパッケージのみがこのレジストリから取得されます。
 
-```csharp
-// タイマー開始
-gameAnalyticsComponent.StartTimer("level_complete");
+Then add the package to `dependencies`:
 
-// タイマー停止
-gameAnalyticsComponent.StopTimer("level_complete");
-```
-
-### イベントレポート
-
-```csharp
-// シンプルなイベント
-gameAnalyticsComponent.Event("button_clicked");
-
-// 数値付きイベント
-gameAnalyticsComponent.Event("score_achieved", 100.0f);
-
-// カスタムフィールド付きイベント
-var customFields = new Dictionary<string, string>
+```json
 {
-    { "level", "5" },
-    { "character", "warrior" }
-};
-gameAnalyticsComponent.Event("level_started", customFields);
-
-// 数値とカスタムフィールド付きイベント
-gameAnalyticsComponent.Event("level_completed", 95.5f, customFields);
+  "dependencies": {
+    "com.gameframex.unity.gameanalytics.gameanalytics": "1.1.0"
+  }
+}
 ```
+
 
 ## 使用上の注意
 

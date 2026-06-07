@@ -63,54 +63,36 @@ Add the following to your project's `Packages/manifest.json`:
 
 ## Quick Start
 
-### Initialization
+### Installation
 
-Initialize the `GameAnalyticsComponent` in Unity's `Awake` method. Call `Init()` to complete initialization:
+Edit your Unity project's `Packages/manifest.json` and add the `scopedRegistries` section:
 
-```csharp
-using GameFrameX.GameAnalytics.Runtime;
-
-public class GameAnalyticsExample : MonoBehaviour
+```json
 {
-    private void Awake()
+  "scopedRegistries": [
     {
-        // Get the GameAnalyticsComponent and initialize it
-        var gameAnalyticsComponent = GameEntry.GetComponent<GameAnalyticsComponent>();
-        gameAnalyticsComponent.Init();
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
     }
+  ]
 }
 ```
 
-### Timer Usage
+`scopes` controls which packages are resolved through this registry. Only packages whose names start with `com.gameframex` will be fetched from it.
 
-```csharp
-// Start a timer for an event
-gameAnalyticsComponent.StartTimer("level_complete");
+Then add the package to `dependencies`:
 
-// Stop the timer when the event ends
-gameAnalyticsComponent.StopTimer("level_complete");
-```
-
-### Event Reporting
-
-```csharp
-// Simple event
-gameAnalyticsComponent.Event("button_clicked");
-
-// Event with value
-gameAnalyticsComponent.Event("score_achieved", 100.0f);
-
-// Event with custom fields
-var customFields = new Dictionary<string, string>
+```json
 {
-    { "level", "5" },
-    { "character", "warrior" }
-};
-gameAnalyticsComponent.Event("level_started", customFields);
-
-// Event with value and custom fields
-gameAnalyticsComponent.Event("level_completed", 95.5f, customFields);
+  "dependencies": {
+    "com.gameframex.unity.gameanalytics.gameanalytics": "1.1.0"
+  }
+}
 ```
+
 
 ## Usage Notes
 

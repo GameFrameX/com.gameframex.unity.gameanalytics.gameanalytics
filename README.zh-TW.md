@@ -63,54 +63,36 @@ GameFrameX GameAnalytics 元件 - 提供遊戲開發者整合和使用遊戲資�
 
 ## 快速開始
 
-### 初始化
+### 安裝
 
-在 Unity 的 `Awake` 方法中初始化 `GameAnalyticsComponent`。呼叫 `Init()` 完成初始化：
+編輯 Unity 專案的 `Packages/manifest.json`，添加 `scopedRegistries` 部分：
 
-```csharp
-using GameFrameX.GameAnalytics.Runtime;
-
-public class GameAnalyticsExample : MonoBehaviour
+```json
 {
-    private void Awake()
+  "scopedRegistries": [
     {
-        // 取得 GameAnalyticsComponent 並初始化
-        var gameAnalyticsComponent = GameEntry.GetComponent<GameAnalyticsComponent>();
-        gameAnalyticsComponent.Init();
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
     }
+  ]
 }
 ```
 
-### 計時功能
+`scopes` 控制哪些套件透過此註冊表解析。只有以 `com.gameframex` 開頭的套件才會從這個註冊表取得。
 
-```csharp
-// 開始計時
-gameAnalyticsComponent.StartTimer("level_complete");
+Then add the package to `dependencies`:
 
-// 結束計時
-gameAnalyticsComponent.StopTimer("level_complete");
-```
-
-### 事件上報
-
-```csharp
-// 簡單事件
-gameAnalyticsComponent.Event("button_clicked");
-
-// 帶數值的事件
-gameAnalyticsComponent.Event("score_achieved", 100.0f);
-
-// 帶自訂欄位的事件
-var customFields = new Dictionary<string, string>
+```json
 {
-    { "level", "5" },
-    { "character", "warrior" }
-};
-gameAnalyticsComponent.Event("level_started", customFields);
-
-// 帶數值和自訂欄位的事件
-gameAnalyticsComponent.Event("level_completed", 95.5f, customFields);
+  "dependencies": {
+    "com.gameframex.unity.gameanalytics.gameanalytics": "1.1.0"
+  }
+}
 ```
+
 
 ## 使用注意事項
 
