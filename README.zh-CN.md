@@ -93,7 +93,6 @@ Then add the package to `dependencies`:
 }
 ```
 
-
 ## 使用注意事项
 
 - 请确保在使用组件的任何方法之前，组件已被正确初始化
@@ -112,4 +111,4 @@ Then add the package to `dependencies`:
 
 ## 开源协议
 
-本项目基于 MIT 协议开源，详见 [LICENSE.md](LICENSE.md)。
+详见 [LICENSE.md](LICENSE.md) 文件。

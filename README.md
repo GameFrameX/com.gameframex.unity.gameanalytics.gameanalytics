@@ -93,7 +93,6 @@ Then add the package to `dependencies`:
 }
 ```
 
-
 ## Usage Notes
 
 - Ensure the component is properly initialized before calling any methods
@@ -112,4 +111,4 @@ See [CHANGELOG.md](CHANGELOG.md) for details.
 
 ## License
 
-This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) for details.
+See [LICENSE.md](LICENSE.md) for license information.

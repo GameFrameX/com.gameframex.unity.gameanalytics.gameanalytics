@@ -93,7 +93,6 @@ Then add the package to `dependencies`:
 }
 ```
 
-
 ## 使用上の注意
 
 - コンポーネントのメソッドを呼び出す前に、正しく初期化されていることを確認してください
@@ -112,4 +111,4 @@ Then add the package to `dependencies`:
 
 ## ライセンス
 
-このプロジェクトは MIT ライセンスの下で公開されています。詳細は [LICENSE.md](LICENSE.md) をご覧ください。
+詳しくは [LICENSE.md](LICENSE.md) をご参照ください。

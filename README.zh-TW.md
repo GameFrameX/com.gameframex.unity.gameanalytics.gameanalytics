@@ -93,7 +93,6 @@ Then add the package to `dependencies`:
 }
 ```
 
-
 ## 使用注意事項
 
 - 請確保在使用元件的任何方法之前，元件已被正確初始化
@@ -112,4 +111,4 @@ Then add the package to `dependencies`:
 
 ## 開源協議
 
-本專案基於 MIT 協議開源，詳見 [LICENSE.md](LICENSE.md)。
+詳見 [LICENSE.md](LICENSE.md) 檔案。

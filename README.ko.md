@@ -93,7 +93,6 @@ Then add the package to `dependencies`:
 }
 ```
 
-
 ## 사용 시 주의사항
 
 - 컴포넌트의 메서드를 호출하기 전에 올바르게 초기화되었는지 확인하세요
@@ -112,4 +111,4 @@ Then add the package to `dependencies`:
 
 ## 라이선스
 
-이 프로젝트는 MIT 라이선스에 따라 배포됩니다. 자세한 내용은 [LICENSE.md](LICENSE.md)를 참조하세요.
+자세한 내용은 [LICENSE.md](LICENSE.md) 파일을 참조하세요.
