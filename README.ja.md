@@ -20,6 +20,7 @@
 [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | **日本語** | [한국어](README.ko.md)
 
 </div>
+
 ## プロジェクト概要
 
 GameFrameX GameAnalytics コンポーネント - ゲーム開発者にゲームアナリティクス機能の統合と使用のためのインターフェースを提供します。GameAnalytics SDK をラップし、イベントトラッキング、タイマー機能、カスタムイベントレポートを提供します。
